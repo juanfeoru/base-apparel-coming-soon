@@ -1,17 +1,17 @@
-const input = document.querySelector(".form__input");
-const form = document.querySelector(".form");
+const input = document.querySelector("input");
+const form = document.querySelector("form");
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const errorIcon = document.querySelector(".form__error-icon");
-const errorText = document.querySelector(".form__error-text");
+const errorIcon = document.querySelector(".error-icon");
+const errorText = document.querySelector(".error-text");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const email = input.value.trim();
+  errorIcon.classList.add("hidden");
+  errorText.classList.add("hidden");
 
-  input.style.border = "1px solid hsla(0, 36%, 70%, 0.4);";
-  errorIcon.style.display = "none";
-  errorText.style.display = "none";
-  input.classList.remove("active");
+  input.classList.remove("border-2");
+  input.classList.remove("border-[var(--red-500)]");
 
   if (email === "") {
     showError("Email cannot be empty");
@@ -22,7 +22,8 @@ form.addEventListener("submit", (e) => {
 
 function showError(message) {
   errorText.textContent = message;
-  errorIcon.style.display = "block";
-  errorText.style.display = "block";
-  input.classList.add("active");
+  errorIcon.classList.remove("hidden");
+  errorText.classList.remove("hidden");
+  input.classList.add("border-2");
+  input.classList.add("border-[var(--red-500)]");
 }

@@ -22,61 +22,90 @@
 
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="page">
-    <header class="header">
+
+  <body
+    class="font-[josefin_sans] bg-[linear-gradient(135deg,_hsl(0,0%,100%),_hsl(0,100%,98%))] flex flex-col gap-12 lg:bg-[url(./images/bg-pattern-desktop.svg)] lg:bg-cover lg:bg-center lg:bg-no-repeat"
+  >
+    <header class="mt-8 ml-8 lg:m-0 lg:absolute lg:top-12 lg:ml-24 xl:ml-48">
       <img
         src="images/logo.svg"
         alt="Base Apparel logo"
-        class="header__logo"
+        class="w-28 lg:w-40 xl:w-48"
         width="158"
         height="33"
       />
     </header>
 
-    <main class="main">
-      <section class="intro">
-        <h1 class="intro__title">
-          <span class="intro__title--highlight">We're</span> <br />
-          coming <br />
-          soon
-        </h1>
-        <p class="intro__text">
-          Hello fellow shoppers! We're currently building our new fashion store.
-          Add your email below to stay up-to-date with announcements and our
-          launch deals.
-        </p>
+    <main class="flex flex-col-reverse lg:flex-row lg:h-screen">
+      <!-- TEXT AND FORM -->
+      <section
+        class="m-8 text-center lg:w-[120rem] lg:flex lg:items-center lg:text-left xl:w-[150rem]"
+      >
+        <div
+          class="lg:flex lg:flex-col lg:justify-center lg:max-w-lg lg:mx-auto"
+        >
+          <h1
+            class="text-4xl mt-6 uppercase text-[var(--gray-900)] font-semibold tracking-[11px] md:text-5xl lg:text-6xl xl:text-7xl"
+          >
+            <span class="text-[var(--pink-400)] font-light">We're</span>
+            <br />
+            coming <br />
+            soon
+          </h1>
+          <p
+            class="text-[var(--pink-400)] text-sm mt-6 md:text-base lg:text-lg"
+          >
+            Hello fellow shoppers! We're currently building our new fashion
+            store. Add your email below to stay up-to-date with announcements
+            and our launch deals.
+          </p>
 
-        <form class="form" action="" novalidate>
-          <div class="form__group">
-            <input
-              type="email"
-              placeholder="Email Address"
-              class="form__input"
-              required
-            />
-            <img
-              src="./images/icon-error.svg"
-              alt=""
-              class="form__error-icon"
-              width="24"
-              height="24"
-            />
-            <button type="submit" class="form__button">
-              <img src="./images/icon-arrow.svg" alt="" />
-            </button>
-          </div>
-          <small class="form__error-text">Please provide a valid email</small>
-        </form>
+          <form
+            class="my-4 mt-6 relative overflow-visible w-full mx-auto"
+            action=""
+            novalidate
+          >
+            <div class="relative">
+              <input
+                type="email"
+                placeholder="Email Address"
+                class="w-full p-3 pl-6 rounded-3xl border border-[var(--pink-400)]/50 outline-none text-sm placeholder:text-[var(--pink-400)]/50 lg:p-4 lg:rounded-4xl lg:text-base lg:pl-8"
+                required
+              />
+              <img
+                src="./images/icon-error.svg"
+                alt=""
+                class="error-icon absolute top-1/2 right-16 -translate-y-1/2 hidden lg:right-28 lg:w-7 lg:h-7"
+                width="24"
+                height="24"
+              />
+              <button
+                type="submit"
+                class="absolute right-0 top-0 bottom-0 w-14 rounded-3xl bg-[linear-gradient(135deg,_hsl(0,_80%,_86%),_hsl(0,_74%,_74%))] cursor-pointer flex justify-center shadow-xl shadow-[(var(--gray-900))] items-center hover:z-10 hover:bg-[linear-gradient(135deg,_hsla(0,_80%,_86%,_0.9),_hsla(0,_74%,_74%,_0.9))] hover:scale-110 ease-out duration-300 lg:w-24 lg:rounded-4xl"
+              >
+                <img src="./images/icon-arrow.svg" alt="" />
+              </button>
+            </div>
+            <small
+              class="error-text pt-4 text-[var(--red-500)] text-sm font-semibold lg:ml-8 hidden"
+            ></small>
+          </form>
+        </div>
       </section>
 
-      <section class="hero">
-        <picture class="hero__picture">
+      <section>
+        <picture>
           <source
             srcset="./images/hero-desktop.jpg"
             media="(min-width: 768px)"
           />
-          <img src="./images/hero-mobile.jpg" alt="" class="hero__image" />
+          <img
+            src="./images/hero-mobile.jpg"
+            alt=""
+            class="w-screen h-full object-cover"
+          />
         </picture>
       </section>
     </main>
